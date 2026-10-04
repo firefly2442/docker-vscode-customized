@@ -22,6 +22,20 @@ Open [http://localhost:8443](http://localhost:8443)
 docker compose down
 ```
 
+## Development
+
+Linting
+
+```shell
+helm lint ./chart
+```
+
+Check output
+
+```shell
+helm template vscode ./chart
+```
+
 ## References
 
 * [VSCode from LinuxServer](https://hub.docker.com/r/linuxserver/code-server)
