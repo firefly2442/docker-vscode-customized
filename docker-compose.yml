@@ -1,0 +1,9 @@
+services:
+
+  docker-vscode-customized:
+    build: ./
+    image: ghcr.io/firefly2442/docker-vscode-customized:latest
+    hostname: docker-vscode-customized
+    ports:
+      - "8443:8443"
+    restart: unless-stopped
