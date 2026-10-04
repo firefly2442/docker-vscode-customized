@@ -3,7 +3,7 @@
 FROM linuxserver/code-server:4.140.0
 
 RUN apt-get update && \
-    apt-get install -y curl wget nano && \
+    apt-get install -y curl wget nano rsync && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
