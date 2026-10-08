@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.27
 # https://hub.docker.com/r/linuxserver/code-server/tags
-FROM linuxserver/code-server:4.140.0
+FROM linuxserver/code-server:4.141.0
 
 RUN apt-get update && \
     apt-get install -y curl wget nano rsync && \
