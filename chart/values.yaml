@@ -159,3 +159,12 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Override the image ENTRYPOINT (Kubernetes "command")
+# command: []
+  # - /bin/sh
+  # - -c
+
+# Override the image CMD (Kubernetes "args")
+# args: []
+  # - exec code-server --bind-addr 0.0.0.0:8443
