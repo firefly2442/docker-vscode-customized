@@ -168,3 +168,13 @@ affinity: {}
 # Override the image CMD (Kubernetes "args")
 # args: []
   # - exec code-server --bind-addr 0.0.0.0:8443
+
+persistence:
+  enabled: true
+  existingClaim: "" # set to use a PVC you manage outside the chart
+  accessModes:
+    - ReadWriteMany
+  size: 2Gi
+  # storageClass: "" # kubectl get storageclasses
+  annotations: {}
+  mountPath: /projects
