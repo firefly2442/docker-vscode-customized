@@ -61,3 +61,5 @@ RUN ARCH=$(uname -m | sed 's/x86_64/x64/; s/aarch64/arm64/') && \
     chmod 755 /usr/local/bin/opencode && \
     opencode --version
 
+# install herdr: https://github.com/herdrdev/herdr
+RUN curl -fsSL https://herdr.dev/install.sh | sh
