@@ -62,8 +62,8 @@ jobs:
           # cache-from: type=registry,ref=ghcr.io/firefly2442/docker-vscode-customized:latest
           # cache-to: type=inline
           # cache to Github
-          # 1. Ignore cache layers only during a scheduled event, this forces a clean rebuild
-          no-cache: ${{ github.event_name == 'schedule' }}
+          # 1. Ignore cache layers only during a scheduled event or manual run, this forces a clean rebuild
+          no-cache: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' }}
           # 2. Always fetch cache for standard triggers (ignored when no-cache is true)
           cache-from: type=gha
           # 3. Always save the final results back to the cache
