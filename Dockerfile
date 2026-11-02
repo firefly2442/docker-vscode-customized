@@ -76,3 +76,6 @@ RUN mkdir -p /godot && \
   chmod +x godot
 # add Godot to PATH
 ENV PATH="/godot:${PATH}"
+
+# install Hermes
+RUN curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
