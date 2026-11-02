@@ -64,3 +64,15 @@ RUN ARCH=$(uname -m | sed 's/x86_64/x64/; s/aarch64/arm64/') && \
 # install herdr: https://github.com/herdrdev/herdr
 RUN curl -fsSL https://herdr.dev/install.sh | sh
 ENV PATH="/config/.local/bin:$PATH"
+
+# install Godot
+# https://github.com/godotengine/godot/releases
+RUN mkdir -p /godot && \
+  cd /godot && \
+  curl -L -O https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip && \
+  unzip Godot_v4.7.2-stable_linux.x86_64.zip && \
+  rm Godot_v4.7.2-stable_linux.x86_64.zip && \
+  mv Godot_v4.7.2-stable_linux.x86_64 godot && \
+  chmod +x godot
+# add Godot to PATH
+ENV PATH="/godot:${PATH}"
