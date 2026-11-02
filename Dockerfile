@@ -3,7 +3,7 @@
 FROM linuxserver/code-server:4.144.0
 
 RUN apt-get update && \
-    apt-get install -y curl wget nano rsync ripgrep tmux nodejs npm unzip jq && \
+    apt-get install -y curl wget nano rsync ripgrep tmux nodejs npm unzip jq firefox && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
