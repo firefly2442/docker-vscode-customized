@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.28
 # https://hub.docker.com/r/linuxserver/code-server/tags
-FROM linuxserver/code-server:4.144.0
+FROM linuxserver/code-server:4.145.2
 
 RUN apt-get update && \
     apt-get install -y curl wget nano rsync ripgrep tmux nodejs npm unzip jq firefox && \
