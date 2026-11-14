@@ -8,11 +8,7 @@ on:
 jobs:
   delete-untagged:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
-      - name: Delete untagged package versions
-        uses: actions/delete-package-versions@v5
-        with:
-          package-name: ${{ github.event.repository.name }}
-          package-type: 'container'
-          delete-only-untagged-versions: 'true'
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: step-security/ghcr-cleanup-action@v1
