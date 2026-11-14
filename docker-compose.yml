@@ -5,5 +5,9 @@ services:
     image: ghcr.io/firefly2442/docker-vscode-customized:latest
     hostname: docker-vscode-customized
     ports:
-      - "8443:8443"
+      - "8443:8443" # vscode
+      - "8060:8060" # for godot web editor
     restart: unless-stopped
+    # for testing godot web editor
+    # entrypoint: ["sh", "-c"]
+    # command: ["cd /godot-web && python3 godot-serve.py"]

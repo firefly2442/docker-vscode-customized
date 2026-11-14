@@ -2,6 +2,13 @@
 
 A slightly customized version of VSCode with additional packages for deployment to Kubernetes.
 
+## Overview
+
+Customized VSCode with:
+
+* agentic tools like `opencode`, `hermes`, and `herdr`
+* game development tools like `godot`
+
 ## Building
 
 ```shell

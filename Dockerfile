@@ -65,6 +65,9 @@ RUN ARCH=$(uname -m | sed 's/x86_64/x64/; s/aarch64/arm64/') && \
 RUN curl -fsSL https://herdr.dev/install.sh | sh
 ENV PATH="/config/.local/bin:$PATH"
 
+# install Hermes
+RUN curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+
 # install Godot
 # https://github.com/godotengine/godot/releases
 RUN mkdir -p /godot && \
@@ -77,5 +80,12 @@ RUN mkdir -p /godot && \
 # add Godot to PATH
 ENV PATH="/godot:${PATH}"
 
-# install Hermes
-RUN curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+# add web-editor version of Godot
+# https://docs.godotengine.org/en/stable/tutorials/editor/using_the_web_editor.html
+RUN mkdir -p /godot-web && \
+  cd /godot-web && \
+  curl -L -O https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_web_editor.zip && \
+  unzip Godot_v4.7.2-stable_web_editor.zip && \
+  rm Godot_v4.7.2-stable_web_editor.zip
+
+COPY godot-serve.py /godot-web/
