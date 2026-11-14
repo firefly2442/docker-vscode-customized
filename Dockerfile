@@ -79,13 +79,3 @@ RUN mkdir -p /godot && \
   chmod +x godot
 # add Godot to PATH
 ENV PATH="/godot:${PATH}"
-
-# add web-editor version of Godot
-# https://docs.godotengine.org/en/stable/tutorials/editor/using_the_web_editor.html
-RUN mkdir -p /godot-web && \
-  cd /godot-web && \
-  curl -L -O https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_web_editor.zip && \
-  unzip Godot_v4.7.2-stable_web_editor.zip && \
-  rm Godot_v4.7.2-stable_web_editor.zip
-
-COPY godot-serve.py /godot-web/
