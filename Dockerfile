@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.28
+# syntax=docker/dockerfile:1.29
 # https://hub.docker.com/r/linuxserver/code-server/tags
 FROM linuxserver/code-server:4.144.0
 
