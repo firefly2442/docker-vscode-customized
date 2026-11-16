@@ -19,7 +19,7 @@ RUN uv venv /.venv && chmod -R 755 /.venv /opt/uv-python
 ENV PATH="/.venv/bin:$PATH"
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv pip install --python /.venv/bin/python tqdm
+    uv pip install --python /.venv/bin/python tqdm gdtoolkit
 
 # Defaults template (outside /config, which is a volume)
 RUN mkdir -p /etc/code-server-defaults/User /etc/code-server-defaults/extensions
