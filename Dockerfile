@@ -35,7 +35,8 @@ RUN /app/code-server/bin/code-server \
       --extensions-dir /etc/code-server-defaults/extensions \
       --install-extension ms-python.python \
       --install-extension detachhead.basedpyright \
-      --install-extension DavidAnson.vscode-markdownlint
+      --install-extension DavidAnson.vscode-markdownlint \
+      --install-extension geequlim.godot-tools
 
 # Init script: LSIO paths are /config/data and /config/extensions
 COPY --chmod=755 <<'EOF' /custom-cont-init.d/seed-vscode.sh
